@@ -5,48 +5,53 @@ import pbtn1 from "../assets/Navbar/pbtn1.png";
 import phbtn2 from "../assets/Navbar/phbtn2.png";
 import menu from "../assets/Navbar/menu.png";
 import close from "../assets/Navbar/close.png";
+import Profilebtn from "../assets/Dashboard/Profilebtn.png";
+import Line from "../assets/Dashboard/Line.png";
+import Bell from "../assets/Dashboard/bell.png";
+import Logoutbtn from "../assets/Dashboard/Logoutbtn.png";
 import { motion } from "framer-motion";
 
-const Navbar = () => {
+const PharmacyNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <div className=" flex top-[200px] justify-between items-center self-stretch border-b-[1px] border-[rgba(0,0,0,0.10)] h-[85px] p-[16px] md:px-[32px] md:py-[24px] lg:px-[80px] ">
+      <div className=" flex items-center self-stretch border-b-[1px] border-[rgba(0,0,0,0.10)] h-[80px] p-[18px] md:px-[32px] gap-[64px] ">
         {/* logo */}
-        <div className=" flex justify-center items-center md:w-[260px] md:h-[43px] md:py-[1px] md:gap-[8px] ">
-          <img src={logo} alt="Logo" />
-          <div className=" hidden md:block font-bold  text-[24px] leading-[24px] text-[#29B48B]">
+        <div className=" flex justify-center items-center md:h-[50px] md:py-[1px] md:gap-[8px] lg:w-[240px] ">
+          <img className=" w-[24px] h-[24px] " src={logo} alt="Logo" />
+          <div className=" hidden md:block font-bold text-[18px] leading-[25.8px] text-[#29B48B]">
             Find MyPharmacy
           </div>
         </div>
 
         {/* hamburger menu */}
-        <div className="grid grid-flow-col items-center justify-center gap-[12px] w-[70.5px] h-[29.5px] md:gap-[24px] md:h-[48px] md:w-[203px] lg:w-[364px] xl:w-[831px] xl:gap-[80px] ">
-          <div className=" flex gap-[16px] order-1 xl:order-2 ">
-            <div className=" md:hidden ">
-              <img src={btn1} alt="Button" />
-            </div>
-            <div className=" hidden lg:block ">
-              <img src={phbtn2} alt="Button" />
-            </div>
-            <div className=" hidden md:block ">
-              <img src={pbtn1} alt="Button" />
-            </div>
+        <div className=" w-full flex justify-between items-center ">
+          <div className=" flex flex-col font-inter ">
+            <div className=" font-medium text-[24px] leading-[26.4px] ">Hello!</div>
+            <div className=" text-[16px] leading-[22.4px] opacity-80 ">Welcome, Vatsal Parikh</div>
           </div>
-          <div className=" block order-2 xl:order-1 ">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="focus:outline-none xl:hidden"
-            >
-              <img src={menu} alt="Menu" />
-            </button>
-            
-            <div className=" hidden xl:flex justify-between font-inter font-semibold items-center w-[435px] h-[46px]  ">
-              <div className=" font-normal p-[10px] text-[16px] leading-[25.2px] ">Home</div>
-              <div className=" font-normal p-[10px] text-[16px] leading-[25.2px] ">About Us</div>
-              <div className=" font-normal p-[10px] text-[16px] leading-[25.2px] ">Contact Us</div>
-              <div className=" font-normal p-[10px] text-[16px] leading-[25.2px] ">Follow Us</div>
+          <div className="grid grid-flow-col items-center justify-center gap-[16px] ">
+            <div className=" hidden md:flex items-center gap-[4px] ">
+              <img src={Bell} alt="Button" />
+            </div>
+            <div className=" hidden md:flex items-center gap-[4px] ">
+              <img src={Line} alt="Button" />
+            </div>
+            <div className=" flex items-center gap-[4px] ">
+              <img src={Profilebtn} alt="Button" />
+              <div className=" hidden md:block font-inter text-[14px] leading-[19.6px] ">
+                Parikh Vatsal
+              </div>
+            </div>
+            <div className=" block  ">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="focus:outline-none lg:hidden"
+              >
+                <img src={menu} alt="Menu" />
+              </button>
+              <img className=" hidden lg:block " src={Logoutbtn} alt="" />
             </div>
           </div>
         </div>
@@ -95,4 +100,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default PharmacyNavbar;
