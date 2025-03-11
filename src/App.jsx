@@ -1,0 +1,12 @@
+import React from 'react'
+import Homepage from './pages/Homepage'
+
+const App = () => {
+  return (
+    <>
+      <Homepage></Homepage>
+    </>
+  )
+}
+
+export default App
