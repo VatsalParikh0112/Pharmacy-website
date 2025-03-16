@@ -23,8 +23,6 @@ const PharmacySidebar = () => {
             <div className="absolute top-[57px] flex flex-col items-center gap-[14px] w-[240px] z-10">
               <img
                 className="bg-gray-600 rounded-[50px] w-[100px] h-[100px]"
-                src=""
-                alt=""
               />
               <div className="flex flex-col items-center self-stretch gap-[4px] font-inter">
                 <div className="text-[16px] leading-[25.2px] font-medium">
