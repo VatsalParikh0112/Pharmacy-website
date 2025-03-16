@@ -39,7 +39,7 @@ const Homepage = () => {
               <div>
                 <button
                   type="button"
-                  class="flex justify-center items-center font-poppins text-center text-white bg-[#29B48B] text-[12px] leading-[22.4px] gap-[8px] rounded-[4px] w-[160px] h-[40px] md:p-[16px] lg:w-[200px] lg:h-[50px] lg:text-[16px] "
+                  className="flex justify-center items-center font-poppins text-center text-white bg-[#29B48B] text-[12px] leading-[22.4px] gap-[8px] rounded-[4px] w-[160px] h-[40px] md:p-[16px] lg:w-[200px] lg:h-[50px] lg:text-[16px] "
                 >
                   <img src={search} alt="" />
                   Find a Pharmacy
