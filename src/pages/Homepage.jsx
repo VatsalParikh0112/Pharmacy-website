@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import search from "../assets/Homepage/search.png";
 import cl from "../assets/Homepage/cl.png";
 import cr from "../assets/Homepage/cr.png";
@@ -11,9 +9,6 @@ const Homepage = () => {
   return (
     <>
       <div className="flex flex-col gap-[8px] ">
-        {/* Navbar */}
-        <Navbar></Navbar>
-
         {/* Homepage */}
         <div className=" flex flex-col items-start ">
           {/* Hero section */}
@@ -106,49 +101,43 @@ const Homepage = () => {
 
             <div className=" flex flex-col items-start   gap-[36px] md:gap-[48px] xl:gap-[52px] w-[288px] md:w-[704px] lg:w-[992px] xl:w-[1281px] ">
               <div className=" flex flex-col items-start self-stretch gap-[8px] md:gap-[14px] lg:gap-[24px] ">
-                <img className=" bg-gray-500 w-full h-[150px] md:h-[462px] lg:h-[473px] xl:h-[611px]  ">
-                </img>
+                <img className=" bg-gray-500 w-full h-[150px] md:h-[462px] lg:h-[473px] xl:h-[611px]  "></img>
                 <div className=" flex flex-col itmes-start  gap-[8px] md:gap-[12px] lg:gap-[16px] ">
                   <div className=" font-semibold font-inter text-[14px] leading-[24px] md:text-[22px] md:leading-[26.4px] lg:text-[24px] lg:leading-[26.4px] ">
-                  Step 2: Select Your Preferred Dose
+                    Step 2: Select Your Preferred Dose
                   </div>
                   <div className=" font-poppins text-[12px] leading-[20px] md:text-[16px] md:leading-[20px] ">
-                  Choose the dosage that suits your needs.
+                    Choose the dosage that suits your needs.
                   </div>
                 </div>
               </div>
 
               <div className=" flex flex-col items-start self-stretch gap-[8px] md:gap-[14px] lg:gap-[24px] ">
-                <img className=" bg-gray-500 w-full h-[150px] md:h-[462px] lg:h-[473px] xl:h-[611px]  ">
-                </img>
+                <img className=" bg-gray-500 w-full h-[150px] md:h-[462px] lg:h-[473px] xl:h-[611px]  "></img>
                 <div className=" flex flex-col itmes-start  gap-[8px] md:gap-[12px] lg:gap-[16px] ">
                   <div className=" font-semibold font-inter text-[14px] leading-[24px] md:text-[22px] md:leading-[26.4px] lg:text-[24px] lg:leading-[26.4px] ">
-                  Step 3: Get Matched with Pharmacies
+                    Step 3: Get Matched with Pharmacies
                   </div>
                   <div className=" font-poppins text-[12px] leading-[20px] md:text-[16px] md:leading-[20px] ">
-                  Receive a list of pharmacies with stock.
+                    Receive a list of pharmacies with stock.
                   </div>
                 </div>
               </div>
 
               <div className=" flex flex-col items-start self-stretch gap-[8px] md:gap-[14px] lg:gap-[24px] ">
-                <img className=" bg-gray-500 w-full h-[150px] md:h-[462px] lg:h-[473px] xl:h-[611px]  ">
-                </img>
+                <img className=" bg-gray-500 w-full h-[150px] md:h-[462px] lg:h-[473px] xl:h-[611px]  "></img>
                 <div className=" flex flex-col itmes-start  gap-[8px] md:gap-[12px] lg:gap-[16px] ">
                   <div className=" font-semibold font-inter text-[14px] leading-[24px] md:text-[22px] md:leading-[26.4px] lg:text-[24px] lg:leading-[26.4px] ">
-                  Step 1: Enter Your Medicine Name And Zip Code
+                    Step 1: Enter Your Medicine Name And Zip Code
                   </div>
                   <div className=" font-poppins text-[12px] leading-[20px] md:text-[16px] md:leading-[20px] ">
-                  Provide the name of your medicine and zip code
+                    Provide the name of your medicine and zip code
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Footer */}
-        <Footer></Footer>
       </div>
     </>
   );
