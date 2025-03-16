@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import logo from "../assets/Navbar/logo.png";
 import menu from "../assets/Navbar/menu.png";
 import close from "../assets/Navbar/close.png";
-import Profilebtn from "../assets/Dashboard/Profilebtn.png";
+import profilebtn from "../assets/Dashboard/profilebtn.png";
 import Line from "../assets/Dashboard/Line.png";
 import Bell from "../assets/Dashboard/bell.png";
 import Logoutbtn from "../assets/Dashboard/Logoutbtn.png";
@@ -61,7 +61,7 @@ const PharmacyNavbar = () => {
               <img src={Line} alt="Line Separator" />
             </div>
             <div className="flex items-center gap-[4px]">
-              <img src={Profilebtn} alt="Profile Button" />
+              <img src={profilebtn} alt="Profile Button" />
               <div className="hidden md:block font-inter text-[14px] leading-[19.6px]">Parikh Vatsal</div>
             </div>
             <div className="block">

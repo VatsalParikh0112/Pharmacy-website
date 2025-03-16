@@ -15,9 +15,10 @@ const PharmacyLayout = () => {
         <PharmacySidebar />
 
         <Routes>
-          <Route path="/" element={<PharmacyDashboard />} />
-          <Route path="/PharmacyCurrent" element={<PharmacyCurrent />} />
-          <Route path="/Homepage" element={<Homepage />} />
+          <Route index element={<PharmacyDashboard />} /> {/* Default page */}
+          <Route path="PharmacyDashboard" element={<PharmacyDashboard />} />
+          <Route path="PharmacyCurrent" element={<PharmacyCurrent />} />
+          <Route path="Homepage" element={<Homepage />} />
         </Routes>
       </div>
     </>
