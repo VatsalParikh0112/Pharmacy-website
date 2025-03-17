@@ -31,7 +31,7 @@ const PharmacyDashboard = () => {
 
         <div className="flex flex-col md:flex-row font-inter justify-center md:justify-between items-start md:items-center self-stretch gap-[12px] md:gap-y-[24px] ">
           <div className=" flex md:flex-col lg:flex-row items-center self-stretch justify-between md:justify-center  rounded-lg border border-black/10 py-[10px] px-[16px] h-[80px] md:py-[32px] md:px-[24px] md:w-[170px] md:h-full md:gap-[24px] lg:w-[265px] ">
-            <div className=" order-1 md:order-2 flex flex-col items-center lg:items-start ">
+            <div className=" order-1 md:order-2 flex flex-col items-start md:items-center lg:items-start ">
               <div className=" text-[13px] leading-[19.6px] " >Current Request</div>
               <div className=" text-[20px] leading-[22px] font-semibold md:leading-[35.2px] " >500</div>
             </div>
@@ -41,7 +41,7 @@ const PharmacyDashboard = () => {
           </div>
 
           <div className=" flex md:flex-col lg:flex-row items-center self-stretch justify-between  md:justify-center rounded-lg border border-black/10  py-[10px] px-[16px] h-[80px] md:py-[32px] md:px-[24px] md:w-[170px] md:h-full md:gap-[24px] lg:w-[265px] ">
-            <div className=" order-1 md:order-2 flex flex-col items-center md:items-start ">
+            <div className=" order-1 md:order-2 flex flex-col items-start md:items-center lg:items-start ">
               <div className=" text-[13px] leading-[19.6px] " >New Request</div>
               <div className=" text-[20px] leading-[22px] font-semibold md:leading-[35.2px] " >1000</div>
             </div>
@@ -51,7 +51,7 @@ const PharmacyDashboard = () => {
           </div>
 
           <div className=" flex md:flex-col lg:flex-row items-center self-stretch justify-between md:justify-center  rounded-lg border border-black/10 py-[10px] px-[16px] h-[80px] md:py-[32px] md:px-[24px] md:w-[170px] md:h-full md:gap-[24px] lg:w-[265px] ">
-            <div className=" order-1 md:order-2 flex flex-col items-center md:items-start ">
+            <div className=" order-1 md:order-2 flex flex-col items-start md:items-center lg:items-start ">
               <div className=" text-[13px] leading-[19.6px] " >Rejected Request</div>
               <div className=" text-[20px] leading-[22px] font-semibold md:leading-[35.2px] " >500</div>
             </div>
@@ -61,7 +61,7 @@ const PharmacyDashboard = () => {
           </div>
           
           <div className=" flex md:flex-col lg:flex-row items-center self-stretch justify-between md:justify-center  rounded-lg border border-black/10 py-[10px] px-[16px] h-[80px] md:py-[32px] md:px-[24px] md:w-[170px] md:h-full md:gap-[24px] lg:w-[265px] ">
-            <div className=" order-1 md:order-2 flex flex-col items-center md:items-start ">
+            <div className=" order-1 md:order-2 flex flex-col items-start md:items-center lg:items-start ">
               <div className=" text-[13px] leading-[19.6px] " >Recall Request</div>
               <div className=" text-[20px] leading-[22px] font-semibold md:leading-[35.2px] " >500</div>
             </div>
