@@ -55,11 +55,9 @@ const Navbar = () => {
             <div className="md:hidden">
               <img src={btn1} alt="Button" />
             </div>
-            {/* this btn */}
-            <Link to='/PharmacyHomepage' className="hidden lg:block">
+            <Link to="/PharmacyHomepage" className="hidden lg:block">
               <img src={phbtn2} alt="Button" />
             </Link>
-            {/* this btn ends */}
             <div className="hidden md:block">
               <img src={pbtn1} alt="Button" />
             </div>
@@ -74,7 +72,8 @@ const Navbar = () => {
 
             {/* menu starts */}
             <div className="hidden xl:flex justify-between font-inter font-semibold items-center w-[435px] h-[46px]">
-              <Link to='/'
+              <Link
+                to="/"
                 onClick={() => setSelectedMenu("Home")}
                 className={`font-normal p-[10px] text-[16px] leading-[25.2px] cursor-pointer relative ${
                   selectedMenu === "Home" ? "text-[#29B48B]" : "text-black"
@@ -85,7 +84,8 @@ const Navbar = () => {
                   <div className="absolute bottom-[-5px] left-0 right-0 h-[2px] bg-[#29B48B]"></div>
                 )}
               </Link>
-              <Link to='/About'
+              <Link
+                to="/About"
                 onClick={() => setSelectedMenu("About Us")}
                 className={`font-normal p-[10px] text-[16px] leading-[25.2px] cursor-pointer relative ${
                   selectedMenu === "About Us" ? "text-[#29B48B]" : "text-black"
@@ -96,7 +96,8 @@ const Navbar = () => {
                   <div className="absolute bottom-[-5px] left-0 right-0 h-[2px] bg-[#29B48B]"></div>
                 )}
               </Link>
-              <Link to='/ContactUs'
+              <Link
+                to="/ContactUs"
                 onClick={() => setSelectedMenu("Contact Us")}
                 className={`font-normal p-[10px] text-[16px] leading-[25.2px] cursor-pointer relative ${
                   selectedMenu === "Contact Us"
@@ -109,7 +110,8 @@ const Navbar = () => {
                   <div className="absolute bottom-[-5px] left-0 right-0 h-[2px] bg-[#29B48B]"></div>
                 )}
               </Link>
-              <Link to='/FollowUs'
+              <Link
+                to="/FollowUs"
                 onClick={() => setSelectedMenu("Follow Us")}
                 className={`font-normal p-[10px] text-[16px] leading-[25.2px] cursor-pointer relative ${
                   selectedMenu === "Follow Us" ? "text-[#29B48B]" : "text-black"
@@ -142,59 +144,68 @@ const Navbar = () => {
             <img src={close} alt="Close" />
           </button>
           <ul className="text-white w-full py-[20px]">
-            <li onClick={() => handleItemClick("Home")}>
-              <a
-                href="#"
-                className={`flex items-center gap-[10px] p-[10px] ${
-                  selectedItem === "Home" ? "bg-[#29B48B]" : ""
-                }`} // Change background if selected
+            <Link to="/">
+              <li onClick={() => handleItemClick("Home")}>
+                <div
+                  className={`flex items-center gap-[10px] p-[10px] ${
+                    selectedItem === "Home" ? "bg-[#29B48B]" : ""
+                  }`} // Change background if selected
+                >
+                  Home
+                </div>
+              </li>
+            </Link>
+
+            <Link to="/About">
+              <li onClick={() => handleItemClick("About Us")}>
+                <div
+                  className={`flex items-center gap-[10px] p-[10px] ${
+                    selectedItem === "About Us" ? "bg-[#29B48B]" : ""
+                  }`} // Change background if selected
+                >
+                  About Us
+                </div>
+              </li>
+            </Link>
+
+            <Link to="/ContactUs">
+              <li onClick={() => handleItemClick("Contact Us")}>
+                <div
+                  className={`flex items-center gap-[10px] p-[10px] ${
+                    selectedItem === "Contact Us" ? "bg-[#29B48B]" : ""
+                  }`} // Change background if selected
+                >
+                  Contact Us
+                </div>
+              </li>
+            </Link>
+
+            <Link to="/FollowUs">
+              <li onClick={() => handleItemClick("Follow Us")}>
+                <div
+                  className={`flex items-center gap-[10px] p-[10px] ${
+                    selectedItem === "Follow Us" ? "bg-[#29B48B]" : ""
+                  }`} // Change background if selected
+                >
+                  Follow Us
+                </div>
+              </li>
+            </Link>
+
+            <Link to="/PharmacyHomepage">
+              <li
+                className="block lg:hidden"
+                onClick={() => handleItemClick("Pharmacy Login")}
               >
-                Home
-              </a>
-            </li>
-            <li onClick={() => handleItemClick("About Us")}>
-              <a
-                href="#"
-                className={`flex items-center gap-[10px] p-[10px] ${
-                  selectedItem === "About Us" ? "bg-[#29B48B]" : ""
-                }`} // Change background if selected
-              >
-                About Us
-              </a>
-            </li>
-            <li onClick={() => handleItemClick("Contact Us")}>
-              <a
-                href="#"
-                className={`flex items-center gap-[10px] p-[10px] ${
-                  selectedItem === "Contact Us" ? "bg-[#29B48B]" : ""
-                }`} // Change background if selected
-              >
-                Contact Us
-              </a>
-            </li>
-            <li onClick={() => handleItemClick("Follow Us")}>
-              <a
-                href="#"
-                className={`flex items-center gap-[10px] p-[10px] ${
-                  selectedItem === "Follow Us" ? "bg-[#29B48B]" : ""
-                }`} // Change background if selected
-              >
-                Follow Us
-              </a>
-            </li>
-            <li
-              className=" block lg:hidden "
-              onClick={() => handleItemClick("Pharmacy Login")}
-            >
-              <a
-                href="#"
-                className={`flex items-center gap-[10px] p-[10px] ${
-                  selectedItem === "Pharmacy Login" ? "bg-[#29B48B]" : ""
-                }`} // Change background if selected
-              >
-                Pharmacy Login
-              </a>
-            </li>
+                <div
+                  className={`flex items-center gap-[10px] p-[10px] ${
+                    selectedItem === "Pharmacy Login" ? "bg-[#29B48B]" : ""
+                  }`} // Change background if selected
+                >
+                  Pharmacy Login
+                </div>
+              </li>
+            </Link>
           </ul>
         </motion.div>
       )}

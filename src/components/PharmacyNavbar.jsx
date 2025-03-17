@@ -50,8 +50,12 @@ const PharmacyNavbar = () => {
         {/* Hamburger Menu */}
         <div className="lg:w-full flex justify-between items-center">
           <div className="hidden lg:flex flex-col font-inter">
-            <div className="font-medium text-[24px] leading-[26.4px]">Hello!</div>
-            <div className="text-[16px] leading-[22.4px] opacity-80">Welcome, Vatsal Parikh</div>
+            <div className="font-medium text-[24px] leading-[26.4px]">
+              Hello!
+            </div>
+            <div className="text-[16px] leading-[22.4px] opacity-80">
+              Welcome, Vatsal Parikh
+            </div>
           </div>
           <div className="grid grid-flow-col items-center justify-center gap-[16px]">
             <div className="hidden md:flex items-center gap-[4px]">
@@ -62,13 +66,24 @@ const PharmacyNavbar = () => {
             </div>
             <div className="flex items-center gap-[4px]">
               <img src={profilebtn} alt="Profile Button" />
-              <div className="hidden md:block font-inter text-[14px] leading-[19.6px]">Parikh Vatsal</div>
+              <div className="hidden md:block font-inter text-[14px] leading-[19.6px]">
+                Parikh Vatsal
+              </div>
             </div>
             <div className="block">
-              <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none lg:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="focus:outline-none lg:hidden"
+              >
                 <img src={menu} alt="Menu" />
               </button>
-              <Link to="/Homepage" ><img className="hidden lg:block" src={Logoutbtn} alt="Logout Button" /></Link>
+              <Link to="/Homepage">
+                <img
+                  className="hidden lg:block"
+                  src={Logoutbtn}
+                  alt="Logout Button"
+                />
+              </Link>
             </div>
           </div>
         </div>
@@ -83,7 +98,10 @@ const PharmacyNavbar = () => {
           transition={{ type: "tween", duration: 0.3 }}
           className="fixed xl:hidden top-0 right-0 flex flex-col w-[228px] h-full py-8 items-start gap-[8px] bg-[#155A46] shadow-lg z-50"
         >
-          <button onClick={() => setIsOpen(false)} className="absolute top-4 right-4">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-4 right-4"
+          >
             <img src={close} alt="Close Menu" />
           </button>
           <div className="flex flex-col justify-between h-full w-full">
@@ -91,93 +109,126 @@ const PharmacyNavbar = () => {
               <div className="text-white w-full font-inter text-[16px] leading-[22.4px]">
                 <div className="flex flex-col py-[20px] px-[16px] gap-[4px]">
                   <div className="text-[20px] leading-[22px]">Hello!</div>
-                  <div className="text-[14px] leading-[19.6px]">Welcome, Vatsal Parikh</div>
+                  <div className="text-[14px] leading-[19.6px]">
+                    Welcome, Vatsal Parikh
+                  </div>
                 </div>
-                <div onClick={() => handleItemClick("Dashboard")}>
-                  <a
-                    href="#"
-                    className={`flex items-center gap-[10px] p-[10px] ${
-                      selectedItem === "Dashboard" ? "bg-[#29B48B]" : ""
-                    }`} // Change background if selected
+                <Link to="/PharmacyHomepage/PharmacyDashboard" >
+                  <div onClick={() => handleItemClick("Dashboard")}>
+                    <div
+                      className={`flex items-center gap-[10px] p-[10px] ${
+                        selectedItem === "Dashboard" ? "bg-[#29B48B]" : ""
+                      }`} // Change background if selected
+                    >
+                      <img src={Home} alt="Dashboard Icon" />
+                      Dashboard
+                    </div>
+                  </div>
+                </Link>
+
+                <Link to="/PharmacyHomepage/PharmacyCurrent" >
+                  <div onClick={() => handleItemClick("Current Request")}>
+                    <div
+                      className={`flex items-center gap-[10px] p-[10px] ${
+                        selectedItem === "Current Request" ? "bg-[#29B48B]" : ""
+                      }`} // Change background if selected
+                    >
+                      <img src={Current} alt="Current Request Icon" />
+                      Current Request
+                    </div>
+                  </div>
+                </Link>
+
+                <Link to="/PharmacyHomepage/PharmacyNew" >
+                  <div onClick={() => handleItemClick("New Request")}>
+                    <div
+                      className={`flex items-center gap-[10px] p-[10px] ${
+                        selectedItem === "New Request" ? "bg-[#29B48B]" : ""
+                      }`} // Change background if selected
+                    >
+                      <img src={New} alt="New Request Icon" />
+                      New Request
+                    </div>
+                  </div>
+                </Link>
+
+                <Link to="/PharmacyHomepage/PharmacyReject" >
+                  <div onClick={() => handleItemClick("Rejected Request")}>
+                    <div
+                      className={`flex items-center gap-[10px] p-[10px] ${
+                        selectedItem === "Rejected Request"
+                          ? "bg-[#29B48B]"
+                          : ""
+                      }`} // Change background if selected
+                    >
+                      <img src={Reject} alt="Rejected Request Icon" />
+                      Rejected Request
+                    </div>
+                  </div>
+                </Link>
+
+                <Link to="/PharmacyHomepage/PharmacyHistory" >
+                  <div
+                    className="block lg:hidden"
+                    onClick={() => handleItemClick("History")}
                   >
-                    <img src={Home} alt="Dashboard Icon" />
-                    Dashboard
-                  </a>
-                </div>
-                <div onClick={() => handleItemClick("Current Request")}>
-                  <a
-                    href="#"
-                    className={`flex items-center gap-[10px] p-[10px] ${
-                      selectedItem === "Current Request" ? "bg-[#29B48B]" : ""
-                    }`} // Change background if selected
+                    <div
+                      className={`flex items-center gap-[10px] p-[10px] ${
+                        selectedItem === "History" ? "bg-[#29B48B]" : ""
+                      }`} // Change background if selected
+                    >
+                      <img src={History} alt="History Icon" />
+                      History
+                    </div>
+                  </div>
+                </Link>
+
+                <Link to="/PharmacyHomepage/PharmacyInquiries" >
+                  <div
+                    className="block lg:hidden"
+                    onClick={() => handleItemClick("General Inquiries")}
                   >
-                    <img src={Current} alt="Current Request Icon" />
-                    Current Request
-                  </a>
-                </div>
-                <div onClick={() => handleItemClick("New Request")}>
-                  <a
-                    href="#"
-                    className={`flex items-center gap-[10px] p-[10px] ${
-                      selectedItem === "New Request" ? "bg-[#29B48B]" : ""
-                    }`} // Change background if selected
+                    <div
+                      className={`flex items-center gap-[10px] p-[10px] ${
+                        selectedItem === "General Inquiries"
+                          ? "bg-[#29B48B]"
+                          : ""
+                      }`} // Change background if selected
+                    >
+                      <img src={General} alt="General Inquiries Icon" />
+                      General Inquiries
+                    </div>
+                  </div>
+                </Link>
+
+                <Link to="/Homepage">
+                  <div
+                    className="block lg:hidden"
+                    onClick={() => handleItemClick("Logout")}
                   >
-                    <img src={New} alt="New Request Icon" />
-                    New Request
-                  </a>
-                </div>
-                <div onClick={() => handleItemClick("Rejected Request")}>
-                  <a
-                    href="#"
-                    className={`flex items-center gap-[10px] p-[10px] ${
-                      selectedItem === "Rejected Request" ? "bg-[#29B48B]" : ""
-                    }`} // Change background if selected
-                  >
-                    <img src={Reject} alt="Rejected Request Icon" />
-                    Rejected Request
-                  </a>
-                </div>
-                <div className="block lg:hidden" onClick={() => handleItemClick("History")}>
-                  <a
-                    href="#"
-                    className={`flex items-center gap-[10px] p-[10px] ${
-                      selectedItem === "History" ? "bg-[#29B48B]" : ""
-                    }`} // Change background if selected
-                  >
-                    <img src={History} alt="History Icon" />
-                    History
-                  </a>
-                </div>
-                <div className="block lg:hidden" onClick={() => handleItemClick("General Inquiries")}>
-                  <a
-                    href="#"
-                    className={`flex items-center gap-[10px] p-[10px] ${
-                      selectedItem === "General Inquiries" ? "bg-[#29B48B]" : ""
-                    }`} // Change background if selected
-                  >
-                    <img src={General} alt="General Inquiries Icon" />
-                    General Inquiries
-                  </a>
-                </div>
-                <div className="block lg:hidden" onClick={() => handleItemClick("Logout")}>
-                  <a
-                    href="#"
-                    className={`flex items-center gap-[10px] p-[10px] ${
-                      selectedItem === "Logout" ? "bg-[#29B48B]" : ""
-                    }`} // Change background if selected
-                  >
-                    <img src={Logout} alt="Logout Icon" />
-                    Logout
-                  </a>
-                </div>
+                    <div
+                      className={`flex items-center gap-[10px] p-[10px] ${
+                        selectedItem === "Logout" ? "bg-[#29B48B]" : ""
+                      }`} // Change background if selected
+                    >
+                      <img src={Logout} alt="Logout Icon" />
+                      Logout
+                    </div>
+                  </div>
+                </Link>
               </div>
             </div>
+
             <div className="flex flex-col items-center p-[12px] gap-[43px] text-white border-t-[1px] border-[#FFFFFF1A]">
               <div className="flex flex-col items-start gap-[28px] font-inter">
                 <div className="text-[16px] leading-[25.2px]">Contact us</div>
                 <div className="flex flex-col items-start gap-[12px]">
-                  <div className="text-[12px] leading-[19.6px]">Ph: +91 7990876497</div>
-                  <div className="text-[12px] leading-[19.6px]">Email: vatsalparikh0112@gmail.com</div>
+                  <div className="text-[12px] leading-[19.6px]">
+                    Ph: +91 7990876497
+                  </div>
+                  <div className="text-[12px] leading-[19.6px]">
+                    Email: vatsalparikh0112@gmail.com
+                  </div>
                 </div>
               </div>
               <div className="font-poppins text-[12px] leading-[16.8px] opacity-50">
