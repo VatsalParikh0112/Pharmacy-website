@@ -16,7 +16,7 @@ const PharmacySidebar = () => {
 
   return (
     <>
-      <div className="sticky hidden lg:flex flex-col items-center gap-[190px] h-full w-[272px]  border-r-[1px]  ">
+      <div className="sticky hidden lg:flex flex-col items-center justify-between min-h-[926px]  w-[272px]  border-r-[1px]  ">
         <div className="flex flex-col items-start gap-[24px]">
           <div className="relative flex flex-col items-center w-full h-[228px]">
             <div className="absolute top-0 w-[272px] h-[114px] bg-gray-400 z-0"></div>
@@ -280,7 +280,7 @@ const PharmacySidebar = () => {
           {/* dashboard ends */}
         </div>
 
-        <div className="flex flex-col items-center py-[12px] px-[32px] gap-[43px]">
+        <div className="flex flex-col items-center py-[12px] px-[32px] gap-[43px] border-t border-black/50">
           <div className="flex flex-col items-start gap-[28px] font-inter">
             <div className="text-[16px] leading-[25.2px]">Contact us</div>
             <div className="flex flex-col items-start gap-[12px]">

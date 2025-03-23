@@ -15,7 +15,7 @@ const PharmacyLayout = () => {
     <>
       <PharmacyNavbar />
 
-      <div className="flex justify-center lg:justify-start ">
+      <div className="flex h-full ">
         <PharmacySidebar />
 
         <Routes>

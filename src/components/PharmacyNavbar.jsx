@@ -33,12 +33,13 @@ const PharmacyNavbar = () => {
   }, []);
 
   const handleItemClick = (item) => {
-    setSelectedItem(item); // Update selected item
+    setSelectedItem(item);
+    setIsOpen(false); 
   };
 
   return (
     <>
-      <div className="flex items-center justify-between self-stretch border-b-[1px] border-[rgba(0,0,0,0.10)] h-[80px] p-[18px] md:px-[32px] gap-[64px]">
+      <div className=" sticky flex top-0 z-50 bg-white items-center justify-between self-stretch border-b-[1px] border-[rgba(0,0,0,0.10)] h-[80px] p-[18px] md:px-[32px] gap-[64px]">
         {/* Logo */}
         <div className="flex justify-center items-center md:h-[50px] md:py-[1px] md:gap-[8px] md:w-[240px]">
           <img className="w-[24px] h-[24px]" src={logo} alt="Logo" />
