@@ -15,7 +15,7 @@ const PharmacyLayout = () => {
     <>
       <PharmacyNavbar />
 
-      <div className="flex h-full ">
+      <div className="flex h-full pt-[10px] md:pt-[0px] ">
         <PharmacySidebar />
 
         <Routes>

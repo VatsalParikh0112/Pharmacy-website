@@ -206,7 +206,7 @@ const Navbar = () => {
               </li>
             </Link>
 
-            <Link to="/Homepage">
+            <Link to="/Homepage" className=" lg:hidden ">
               <li onClick={() => handleItemClick("Homepage")}>
                 <div
                   className={`flex items-center gap-[10px] p-[10px] ${

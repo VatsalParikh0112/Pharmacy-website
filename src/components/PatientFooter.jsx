@@ -34,15 +34,15 @@ const PatientFooter = () => {
               Quick Links
             </div>
             <div className="flex flex-col self-stretch items-start gap-[8px] ">
-              <div className=" text-[16px] leading-[16px] h-[20px] ">Home</div>
-              <div className=" text-[16px] leading-[16px] h-[20px] ">
-                About Us
+              <div className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">Current Request</div>
+              <div className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">
+                Patient Info
               </div>
-              <div className=" text-[16px] leading-[16px] h-[20px] ">
-                Contact Us
+              <div className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">
+                Insurance Info
               </div>
-              <div className=" text-[16px] leading-[16px] h-[20px] ">
-                Privacy Policy
+              <div className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">
+                History
               </div>
             </div>
           </div>
@@ -53,8 +53,8 @@ const PatientFooter = () => {
             </div>
             <div className=" flex flex-col items-start gap-[8px] h-[56px] ">
               <div className=" flex items-center gap-[8px] py-[2px] h-[20px] ">
-                <img className=" w-[14px] h-[16px] " src={whatsapp} alt="" />
-                <div className=" font-[16px] leading-[16px] ">
+                <img className=" cursor-pointer w-[14px] h-[16px] " src={whatsapp} alt="" />
+                <div className=" cursor-pointer font-[16px] leading-[16px] ">
                   +123 456 789 0
                 </div>
               </div>
@@ -72,10 +72,10 @@ const PatientFooter = () => {
               Follow Us
             </div>
             <div className=" flex gap-[16px] ">
-              <img className=" w-[24px] h-[24px] " src={facebook} alt="" />
-              <img className=" w-[24px] h-[24px] " src={twitter} alt="" />
-              <img className=" w-[24px] h-[24px] " src={insta} alt="" />
-              <img className=" w-[24px] h-[24px] " src={linkedin} alt="" />
+              <img className=" cursor-pointer w-[24px] h-[24px] " src={facebook} alt="" />
+              <img className=" cursor-pointer w-[24px] h-[24px] " src={twitter} alt="" />
+              <img className=" cursor-pointer w-[24px] h-[24px] " src={insta} alt="" />
+              <img className=" cursor-pointer w-[24px] h-[24px] " src={linkedin} alt="" />
             </div>
           </div>
         </div>
