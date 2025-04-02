@@ -5,6 +5,16 @@ import Location from "../assets/Patient/Location.png";
 import Search from "../assets/Patient/Search.png";
 import Filter from "../assets/Patient/Filter.png";
 import Close from "../assets/Patient/Close.png";
+import Medication from "../assets/Patient/Medication.png";
+import Ortho from "../assets/Patient/Ortho.png";
+import Respiratory from "../assets/Patient/Respiratory.png";
+import Wound from "../assets/Patient/Wound.png";
+import Diabetic from "../assets/Patient/Diabetic.png";
+import Diagnostic from "../assets/Patient/Diagnostic.png";
+import Eye from "../assets/Patient/Eye.png";
+import Post from "../assets/Patient/Post.png";
+import Mobility from "../assets/Patient/Mobility.png";
+
 
 const PatientHomepage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -114,9 +124,11 @@ const PatientHomepage = () => {
                     </div>
                   )}
                 </div>
-                <div className={`p-[8px] rounded-sm bg-[rgba(242,248,246,0.5)] shadow-[inset_0_0_4px_0_rgba(0,0,0,0.05)] cursor-pointer md:p-[12px] ${
+                <div
+                  className={`p-[8px] rounded-sm bg-[rgba(242,248,246,0.5)] shadow-[inset_0_0_4px_0_rgba(0,0,0,0.05)] cursor-pointer md:p-[12px] ${
                     inputActive || searchTerm ? "opacity-100" : "opacity-50"
-                  }`} >
+                  }`}
+                >
                   <img src={Filter} alt="Filter" />
                 </div>
               </div>
@@ -155,7 +167,86 @@ const PatientHomepage = () => {
         </div>
       </div>
 
-      <div></div>
+      {/* Medication */}
+      <div className=" flex flex-col md:flex-row md:justify-between px-[16px] py-[24px] gap-[20px] md:gap-[0px] md:px-[32px] md:py-[48px] lg:px-[80px] lg:py-[48px] items-center  ">
+        <div className=" flex flex-col gap-[16px] md:w-[520px] lg:w-[750px] ">
+          <div className=" flex gap-[10px] ">
+            <div>
+              <img className=" h-[24px] w-[24px] " src={Medication} alt="" />
+            </div>
+            <div className=" font-inter font-medium text-[18px] leading-[25.2px] md:text-[20px] md:leading-[25.2px] ">
+              Need Personalized Medication?
+            </div>
+          </div>
+          <div className=" font-poppins opacity-50 text-[14px] leading-[22.4px] md:text-[16px] md:leading-[22.4px] ">
+            Find nearby compounding pharmacies that offer customized
+            prescriptions tailored to your specific needs. Our network includes
+            trusted professionals who can help with specialized medications.
+          </div>
+        </div>
+        <button className=" flex justify-center items-center bg-[#29B48B] text-white font-poppins rounded-[4px] text-[14px] leading-[19.6px] py-[12px] px-[16px] w-[160px]  ">
+          Explore now
+        </button>
+      </div>
+
+
+      <div className=" flex flex-col gap-[40px] py-[12px] px-[16px] md:px-[32px] lg:px-[80px] ">
+        <div className=" flex flex-col font-inter gap-[12px] items-center lg:items-start ">
+          <div className=" text-[20px] leading-[22px] font-semibold md:text-[24px] md:leading-[26.4px] ">Medical Supplies Categories</div>
+          <div className=" text-[14px] leading-[19.6px] text-center md:text-[16px] md:leading-[22.4px] lg:text-start ">Find the right supplies for every healthcare need.</div>
+        </div>
+        <div className=" flex flex-wrap gap-y-[16px] gap-x-[20px] justify-center font-inter font-medium ">
+            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+              <div>
+                <img src={Ortho} alt="" />
+              </div>
+              <div className=" text-[18px] leading-[25.2px] ">Orthopedic Supplies</div>
+            </div>
+            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+              <div>
+                <img src={Respiratory} alt="" />
+              </div>
+              <div className=" text-[18px] leading-[25.2px] ">Respiratory Care</div>
+            </div>
+            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+              <div>
+                <img src={Mobility} alt="" />
+              </div>
+              <div className=" text-[18px] leading-[25.2px] ">Mobility Aids</div>
+            </div>
+            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+              <div>
+                <img src={Wound} alt="" />
+              </div>
+              <div className=" text-[18px] leading-[25.2px] ">Wound Care</div>
+            </div>
+            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+              <div>
+                <img src={Diabetic} alt="" />
+              </div>
+              <div className=" text-[18px] leading-[25.2px] ">Diabetic Supplies</div>
+            </div>
+            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+              <div>
+                <img src={Diagnostic} alt="" />
+              </div>
+              <div className=" text-[18px] leading-[25.2px] ">Diagnostic Devices</div>
+            </div>
+            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+              <div>
+                <img src={Eye} alt="" />
+              </div>
+              <div className=" text-[18px] leading-[25.2px] ">Eye & Ear Care</div>
+            </div>
+            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+              <div>
+                <img src={Post} alt="" />
+              </div>
+              <div className=" text-[18px] leading-[25.2px] ">Post-Surgery Care</div>
+            </div>
+        </div>
+      </div>
+
       <div></div>
     </div>
   );
