@@ -114,7 +114,9 @@ const PatientHomepage = () => {
                     </div>
                   )}
                 </div>
-                <div className="p-[8px] rounded-sm bg-[rgba(242,248,246,0.5)] shadow-[inset_0_0_4px_0_rgba(0,0,0,0.05)] cursor-pointer md:p-[12px] ">
+                <div className={`p-[8px] rounded-sm bg-[rgba(242,248,246,0.5)] shadow-[inset_0_0_4px_0_rgba(0,0,0,0.05)] cursor-pointer md:p-[12px] ${
+                    inputActive || searchTerm ? "opacity-100" : "opacity-50"
+                  }`} >
                   <img src={Filter} alt="Filter" />
                 </div>
               </div>
