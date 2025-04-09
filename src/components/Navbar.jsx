@@ -31,6 +31,7 @@ const Navbar = () => {
 
   const handleItemClick = (item) => {
     setSelectedItem(item); // Update selected item
+    setIsOpen(false); // Close the mobile menu
   };
 
   return (

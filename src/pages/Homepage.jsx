@@ -12,22 +12,27 @@ const Homepage = () => {
         {/* Homepage */}
         <div className=" flex flex-col items-start ">
           {/* Hero section */}
-          <div className=" flex justify-center lg:justify-between items-center self-stretch bg-[#F2F4F8] px-[16px] py-[83px] md:py-[138px] md:pl-[32px] md:pr-[219px] lg:py-[80px] lg:px-[80px] xl:py-[100px] xl:px-[80px] ">
+          <div className=" flex justify-start lg:justify-between items-center self-stretch bg-[#F2F4F8] px-[16px] py-[83px] md:py-[138px] md:pl-[32px] md:pr-[219px] lg:py-[80px] lg:px-[80px] xl:py-[100px] xl:px-[80px] "
+          style={{
+            background:
+              "linear-gradient(285deg, rgba(240, 253, 252, 0.80) 7.57%, rgba(207, 242, 230, 0.80) 106.54%)",
+          }}
+          >
             <div className=" flex flex-col items-start gap-[20px] md:gap-[24px] ">
               <div className=" flex flex-col items-start gap-[14px] md:gap-[24px] ">
                 <div className=" flex font-inter flex-col items-start self-stretch gap-[14px] md:gap-[16px] ">
                   <div className=" font-medium text-[14px] leading-[22px] md:text-[16px] lg:text-[18px] ">
                     Welcome to Find My Pharmacy
                   </div>
-                  <div className=" self-stretch font-bold text-[24px] leading-[32px] md:text-[32px] md:leading-[44px] md:w-[490px] lg:text-[36px] lg:w-[517px] ">
-                    The Best Way To Find{" "}
+                  <div className=" self-stretch font-bold text-[24px] leading-[32px] md:text-[32px] md:leading-[44px] lg:text-[36px] lg:w-[517px] ">
+                    The Best Way To Find&nbsp;
                     <span className=" text-[#29B48B] ">Pharmacy</span>
                   </div>
                 </div>
                 <div className=" break-words text-[12px] font-poppins leading-[20px]  md:text-[14px] md:leading-[22.4px] lg:text-[16px] ">
                   <span className="font-normal">
                     Tell us about medicine, we will connect you with pharmacy
-                    who has it in stock.{" "}
+                    who has it in stock.
                   </span>
                   <br />
                   <span className=" font-semibold ">

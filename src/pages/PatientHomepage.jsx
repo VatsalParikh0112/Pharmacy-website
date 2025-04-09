@@ -15,7 +15,6 @@ import Eye from "../assets/Patient/Eye.png";
 import Post from "../assets/Patient/Post.png";
 import Mobility from "../assets/Patient/Mobility.png";
 
-
 const PatientHomepage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [recentSearches, setRecentSearches] = useState([]);
@@ -189,65 +188,123 @@ const PatientHomepage = () => {
         </button>
       </div>
 
-
       <div className=" flex flex-col gap-[40px] py-[12px] px-[16px] md:px-[32px] lg:px-[80px] ">
         <div className=" flex flex-col font-inter gap-[12px] items-center lg:items-start ">
-          <div className=" text-[20px] leading-[22px] font-semibold md:text-[24px] md:leading-[26.4px] ">Medical Supplies Categories</div>
-          <div className=" text-[14px] leading-[19.6px] text-center md:text-[16px] md:leading-[22.4px] lg:text-start ">Find the right supplies for every healthcare need.</div>
+          <div className=" text-[20px] leading-[22px] font-semibold md:text-[24px] md:leading-[26.4px] ">
+            Medical Supplies Categories
+          </div>
+          <div className=" text-[14px] leading-[19.6px] text-center md:text-[16px] md:leading-[22.4px] lg:text-start ">
+            Find the right supplies for every healthcare need.
+          </div>
         </div>
         <div className=" flex flex-wrap gap-y-[16px] gap-x-[20px] justify-center font-inter font-medium ">
-            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
-              <div>
-                <img src={Ortho} alt="" />
-              </div>
-              <div className=" text-[18px] leading-[25.2px] ">Orthopedic Supplies</div>
+          <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+            <div>
+              <img src={Ortho} alt="" />
             </div>
-            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
-              <div>
-                <img src={Respiratory} alt="" />
-              </div>
-              <div className=" text-[18px] leading-[25.2px] ">Respiratory Care</div>
+            <div className=" text-[18px] leading-[25.2px] ">
+              Orthopedic Supplies
             </div>
-            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
-              <div>
-                <img src={Mobility} alt="" />
-              </div>
-              <div className=" text-[18px] leading-[25.2px] ">Mobility Aids</div>
+          </div>
+          <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+            <div>
+              <img src={Respiratory} alt="" />
             </div>
-            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
-              <div>
-                <img src={Wound} alt="" />
-              </div>
-              <div className=" text-[18px] leading-[25.2px] ">Wound Care</div>
+            <div className=" text-[18px] leading-[25.2px] ">
+              Respiratory Care
             </div>
-            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
-              <div>
-                <img src={Diabetic} alt="" />
-              </div>
-              <div className=" text-[18px] leading-[25.2px] ">Diabetic Supplies</div>
+          </div>
+          <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+            <div>
+              <img src={Mobility} alt="" />
             </div>
-            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
-              <div>
-                <img src={Diagnostic} alt="" />
-              </div>
-              <div className=" text-[18px] leading-[25.2px] ">Diagnostic Devices</div>
+            <div className=" text-[18px] leading-[25.2px] ">Mobility Aids</div>
+          </div>
+          <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+            <div>
+              <img src={Wound} alt="" />
             </div>
-            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
-              <div>
-                <img src={Eye} alt="" />
-              </div>
-              <div className=" text-[18px] leading-[25.2px] ">Eye & Ear Care</div>
+            <div className=" text-[18px] leading-[25.2px] ">Wound Care</div>
+          </div>
+          <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+            <div>
+              <img src={Diabetic} alt="" />
             </div>
-            <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
-              <div>
-                <img src={Post} alt="" />
-              </div>
-              <div className=" text-[18px] leading-[25.2px] ">Post-Surgery Care</div>
+            <div className=" text-[18px] leading-[25.2px] ">
+              Diabetic Supplies
             </div>
+          </div>
+          <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+            <div>
+              <img src={Diagnostic} alt="" />
+            </div>
+            <div className=" text-[18px] leading-[25.2px] ">
+              Diagnostic Devices
+            </div>
+          </div>
+          <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+            <div>
+              <img src={Eye} alt="" />
+            </div>
+            <div className=" text-[18px] leading-[25.2px] ">Eye & Ear Care</div>
+          </div>
+          <div className=" flex flex-col items-center lg:items-start bg-white shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)] w-[288px] rounded-[4px] gap-[10px] px-[16px] py-[20px] md:w-[339px] lg:w-[314px] xl:w-[302px] ">
+            <div>
+              <img src={Post} alt="" />
+            </div>
+            <div className=" text-[18px] leading-[25.2px] ">
+              Post-Surgery Care
+            </div>
+          </div>
         </div>
       </div>
 
-      <div></div>
+      <div className=" flex flex-col gap-[40px] py-[12px] pb-[60px] px-[16px] md:px-[32px] lg:px-[80px] w-full ">
+        <div className=" flex flex-col gap-[12px] items-center justify-between ">
+          <div className=" font-inter font-semibold text-[20px] leading-[35.2px] md:text-[32px] md:leading-[35.2px] ">
+            How It’s Work
+          </div>
+          <div className=" font-poppins text-[14px] leading-[22.4px] md:text-[16px] md:leading-[22.4px] ">
+            Find your medicine in simple steps
+          </div>
+        </div>
+
+        <div className=" flex flex-col gap-[20px] md:flex-row md:gap-[40px] md:justify-between w-full ">
+          <div className=" flex flex-col gap-[16px] font-inter items-center md:gap-[30px] md:w-[186px] lg:w-[304px] xl:w-[400px]  ">
+            <div className=" flex h-[50px] w-[50px] bg-[#29B48B] py-[10px] items-center justify-center rounded-full ">
+              <div className=" font-bold text-[24px] text-white ">1</div>
+            </div>
+            <div className=" flex flex-col items-center gap-[12px] md:gap-[30px] ">
+              <div className=" font-bold text-[16px] leading-[20px] md:text-[20px] md:leading-[20px] ">Enter Details</div>
+              <div className=" opacity-50 text-[14px] leading-[20px] text-center md:text-[16px] md:leading-[20px]">
+                Enter medicine details and ZIP code
+              </div>
+            </div>
+          </div>
+          <div className=" flex flex-col gap-[16px] font-inter items-center md:gap-[30px] md:w-[186px] lg:w-[304px] xl:w-[400px] ">
+            <div className=" flex h-[50px] w-[50px] bg-[#29B48B] py-[10px] items-center justify-center rounded-full ">
+              <div className=" font-bold text-[24px] text-white ">2</div>
+            </div>
+            <div className=" flex flex-col items-center gap-[12px] md:gap-[30px] ">
+              <div className=" font-bold text-[16px] leading-[20px] md:text-[20px] md:leading-[20px] ">Select Preferences</div>
+              <div className=" opacity-50 text-[14px] leading-[20px] text-center md:text-[16px] md:leading-[20px]">
+              Select preferred dose and pharmacy
+              </div>
+            </div>
+          </div>
+          <div className=" flex flex-col gap-[16px] font-inter items-center md:gap-[30px] md:w-[186px] lg:w-[304px] xl:w-[400px] ">
+            <div className=" flex h-[50px] w-[50px] bg-[#29B48B] py-[10px] items-center justify-center rounded-full ">
+              <div className=" font-bold text-[24px] text-white ">3</div>
+            </div>
+            <div className=" flex flex-col items-center gap-[12px] md:gap-[30px] ">
+              <div className=" font-bold text-[16px] leading-[20px] md:text-[20px] md:leading-[20px] ">Get Medicine</div>
+              <div className=" opacity-50 text-[14px] leading-[20px] text-center md:text-[16px] md:leading-[20px]">
+              Get your medicine with verified pharmacy details
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -10,6 +10,7 @@ const FollowUs = () => {
   return (
     <>
       <div className=" flex flex-col items-center gap-[56px] ">
+
         <div className=" flex flex-col bg-gray-500 items-start justify-center h-[550px] w-full text-white ">
           <div className=" flex flex-col md:w-[535px] gap-[12px] px-[16px] md:px-[32px] md:gap-[16px] ">
             <div className=" font-inter font-semibold text-[20px] leading-[22px] md:w-[270px] md:text-[32px] md:leading-[35.2px] ">
@@ -23,6 +24,7 @@ const FollowUs = () => {
             </div>
           </div>
         </div>
+
         <div className=" flex flex-col items-center gap-[56px] pb-[56px] px-[16px] md:px-[32px] ">
           <div className=" flex flex-col items-center gap-[32px] ">
             <div className=" flex flex-col items-center gap-[10px] p-[10px] ">
@@ -55,21 +57,21 @@ const FollowUs = () => {
             </div>
           </div>
 
-          <div className=" flex flex-col items-center gap-[32px] py-[56px]  ">
+          <div className=" flex flex-col items-center gap-[32px] py-[56px] w-[544px] ">
             <div className=" flex flex-col items-center justify-center gap-[12px] ">
-              <div className=" font-inter font-semibold text-[20px] leading-[22px] ">
+              <div className=" font-inter font-semibold text-[20px] leading-[22px] md:text-[32px] md:leading-[35.2px]  ">
                 Subscribe To Our Newsletter
               </div>
-              <div className=" font-inter text-center text-[12px] leading-[16.8px] ">
+              <div className=" font-inter text-center text-[12px] leading-[16.8px] md:text-[16px] md:leading-[22.4px] ">
                 Get 10% off on your first order and stay connect with new
                 product
               </div>
             </div>
-            <div className=" flex justify-center items-center gap-[12px] ">
+            <div className=" flex justify-center items-center gap-[12px] w-full ">
               <input
                 type="text"
                 placeholder="Enter Your Email"
-                className=" flex justify-center items-start h-[40px] rounded border border-gray-300 p-[10px] "
+                className=" flex justify-center items-start h-[40px] rounded border border-gray-300 p-[10px] w-full "
               />
 
               <button className=" flex items-center bg-[#29B48B] text-white border rounded h-[40px] py-[10px] px-[16px] ">

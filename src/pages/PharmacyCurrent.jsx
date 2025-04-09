@@ -3,7 +3,9 @@ import { Search, X } from "lucide-react";
 
 const PharmacyCurrent = () => {
   const [inputValue, setInputValue] = useState("");
-  const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const [selected, setSelected] = useState(null); // Track which dropdown is open
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -216,7 +218,7 @@ const PharmacyCurrent = () => {
             {openDropdown === index && (
               <div className="border-t border-gray-300 flex flex-col px-[12px] py-[12px] gap-[24px] rounded-b-[4px] shadow-md">
                 {/* Medical Details */}
-                <div className="flex flex-col items-start gap-[16px] md:w-[487px] ">
+                <div className="flex flex-col items-start gap-[16px] md:w-[487px] md:hidden ">
                   <div className="font-poppins font-medium text-[16px] leading-[25.2px] md:text-[18px] ">
                     Medication Information
                   </div>
@@ -272,34 +274,64 @@ const PharmacyCurrent = () => {
                   <div className="font-inter flex flex-col gap-[4px] md:gap-[8px] w-full ">
                     <div className="flex justify-between items-center">
                       <div className="opacity-50 text-[12px] leading-[16.8px] md:text-[16px] md:leading-[22.4px]  ">
-                        Generic Name
+                        Name
                       </div>
                       <div className="font-medium text-[14px] leading-[19.2px] md:text-[16px] md:leading-[22.4px] ">
-                        Amoxicillin
+                        XYZ
                       </div>
                     </div>
                     <div className="flex justify-between items-center">
                       <div className="opacity-50 text-[12px] leading-[16.8px] md:text-[16px] md:leading-[22.4px]  ">
-                        Brand Name
+                        Date Of Birth
                       </div>
                       <div className="font-medium text-[14px] leading-[19.2px] md:text-[16px] md:leading-[22.4px] ">
-                        Amoxil
+                        dd/mm/yy
                       </div>
                     </div>
                     <div className="flex justify-between items-center">
                       <div className="opacity-50 text-[12px] leading-[16.8px] md:text-[16px] md:leading-[22.4px]  ">
-                        Strength
+                        Phone Number
                       </div>
                       <div className="font-medium text-[14px] leading-[19.2px] md:text-[16px] md:leading-[22.4px] ">
-                        500mg
+                        0123-456-789
                       </div>
                     </div>
-                    <div className="flex justify-between items-center">
+                    <div className="flex justify-between items-start">
                       <div className="opacity-50 text-[12px] leading-[16.8px] md:text-[16px] md:leading-[22.4px]  ">
-                        Dosage
+                        Medicaid :
                       </div>
-                      <div className="font-medium text-[14px] leading-[19.2px] md:text-[16px] md:leading-[22.4px] ">
-                        1 tablet daily
+                      <div className="flex gap-[10px]">
+                        {/* YES Box */}
+                        <div className="flex flex-col justify-between items-center">
+                          <div className=" font-poppins text-[16px] leaing-[25.2px] ">Yes</div>
+                          <div
+                            onClick={() => setSelected("yes")}
+                            className={`w-[20px] h-[20px] border-2 rounded-lg flex items-center justify-center cursor-pointer 
+        ${selected === "yes" ? "border-green-600" : "border-gray-400"}`}
+                          >
+                            {selected === "yes" && (
+                              <span className="text-green-600 text-[10px] leading-none">
+                                ✔
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* NO Box */}
+                        <div className="flex flex-col items-center">
+                          <div>No</div>
+                          <div
+                            onClick={() => setSelected("no")}
+                            className={`w-[20px] h-[20px] border-2 rounded-lg flex items-center justify-center cursor-pointer 
+        ${selected === "no" ? "border-red-600" : "border-gray-400"}`}
+                          >
+                            {selected === "no" && (
+                              <span className="text-red-600 text-[10px] leading-none">
+                                ✖
+                              </span>
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
