@@ -1,5 +1,8 @@
 import React from 'react';
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import 'typeface-roboto';
+import 'typeface-inter';
+import 'typeface-poppins';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Homepage from './pages/Homepage';

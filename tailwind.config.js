@@ -13,8 +13,9 @@ export default {
     },
     extend: {
       fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
-        poppins: ["Poppins", "sans-serif"],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
