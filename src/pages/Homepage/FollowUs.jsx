@@ -1,10 +1,10 @@
 import React from "react";
-import Google from "../assets/Follow US/Google.png";
-import Facebook from "../assets/Follow US/Facebook.png";
-import Insta from "../assets/Follow US/Insta.png";
-import Youtube from "../assets/Follow US/Youtube.png";
-import Twitter from "../assets/Follow US/Twitter.png";
-import Linkedin from "../assets/Follow US/Linkedin.png";
+import Google from "../../assets/Follow US/Google.png";
+import Facebook from "../../assets/Follow US/Facebook.png";
+import Insta from "../../assets/Follow US/Insta.png";
+import Youtube from "../../assets/Follow US/Youtube.png";
+import Twitter from "../../assets/Follow US/Twitter.png";
+import Linkedin from "../../assets/Follow US/Linkedin.png";
 
 const FollowUs = () => {
   return (

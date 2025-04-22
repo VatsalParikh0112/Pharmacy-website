@@ -1,13 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Homepage from "../pages/Homepage";
 import PatientNavbar from "./PatientNavbar";
-import PatientCurrent from "../pages/PatientCurrent";
-import PatientHomepage from "../pages/PatientHomepage";
 import PatientFooter from "./PatientFooter";
-import PatientInfo from "../pages/PatientInfo";
-import PatientInsurance from "../pages/PatientInsurance";
-import PatientHistory from "../pages/PatientHistory"
+import Homepage from "../pages/Homepage/Homepage";
+import PatientCurrent from "../pages/Patient/PatientCurrent";
+import PatientHomepage from "../pages/Patient/PatientHomepage";
+import PatientInfo from "../pages/Patient/PatientInfo";
+import PatientInsurance from "../pages/Patient/PatientInsurance";
+import PatientHistory from "../pages/Patient/PatientHistory"
 
 
 const PatientLayout = () => {

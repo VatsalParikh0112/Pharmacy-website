@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import Main from "../assets/Patient/Main.png";
-import Main2 from "../assets/Patient/Main2.png";
-import Location from "../assets/Patient/Location.png";
-import Search from "../assets/Patient/Search.png";
-import Filter from "../assets/Patient/Filter.png";
-import Close from "../assets/Patient/Close.png";
-import Medication from "../assets/Patient/Medication.png";
-import Ortho from "../assets/Patient/Ortho.png";
-import Respiratory from "../assets/Patient/Respiratory.png";
-import Wound from "../assets/Patient/Wound.png";
-import Diabetic from "../assets/Patient/Diabetic.png";
-import Diagnostic from "../assets/Patient/Diagnostic.png";
-import Eye from "../assets/Patient/Eye.png";
-import Post from "../assets/Patient/Post.png";
-import Mobility from "../assets/Patient/Mobility.png";
+import Main from "../../assets/Patient/Main.png";
+import Main2 from "../../assets/Patient/Main2.png";
+import Location from "../../assets/Patient/Location.png";
+import Search from "../../assets/Patient/Search.png";
+import Filter from "../../assets/Patient/Filter.png";
+import Close from "../../assets/Patient/Close.png";
+import Medication from "../../assets/Patient/Medication.png";
+import Ortho from "../../assets/Patient/Ortho.png";
+import Respiratory from "../../assets/Patient/Respiratory.png";
+import Wound from "../../assets/Patient/Wound.png";
+import Diabetic from "../../assets/Patient/Diabetic.png";
+import Diagnostic from "../../assets/Patient/Diagnostic.png";
+import Eye from "../../assets/Patient/Eye.png";
+import Post from "../../assets/Patient/Post.png";
+import Mobility from "../../assets/Patient/Mobility.png";
 
 const PatientHomepage = () => {
   const [searchTerm, setSearchTerm] = useState("");

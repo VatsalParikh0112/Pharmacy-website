@@ -1,8 +1,8 @@
 import React from "react";
-import BG from "../assets/Contact/BG.jpeg";
-import Email from "../assets/Contact/Email.png";
-import Call from "../assets/Contact/Call.png";
-import Time from "../assets/Contact/Time.png";
+import BG from "../../assets/Contact/BG.jpeg";
+import Email from "../../assets/Contact/Email.png";
+import Call from "../../assets/Contact/Call.png";
+import Time from "../../assets/Contact/Time.png";
 
 const ContactUs = () => {
   return (

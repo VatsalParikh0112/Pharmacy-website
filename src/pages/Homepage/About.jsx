@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Who from "../assets/About/Who.png";
-import Who768 from "../assets/About/Who768.png";
-import Vision from "../assets/About/Vision.png";
-import Vision768 from "../assets/About/Vision768.png";
-import Location from "../assets/About/Location.png";
-import Verify from "../assets/About/Verify.png";
-import Search from "../assets/About/Search.png";
-import Accurate from "../assets/About/Accurate.png";
-import Community from "../assets/About/Community.png";
-import Secure from "../assets/About/Secure.png";
+import Who from "../../assets/About/Who.png";
+import Who768 from "../../assets/About/Who768.png";
+import Vision from "../../assets/About/Vision.png";
+import Vision768 from "../../assets/About/Vision768.png";
+import Location from "../../assets/About/Location.png";
+import Verify from "../../assets/About/Verify.png";
+import Search from "../../assets/About/Search.png";
+import Accurate from "../../assets/About/Accurate.png";
+import Community from "../../assets/About/Community.png";
+import Secure from "../../assets/About/Secure.png";
 
 const About = () => {
   return (

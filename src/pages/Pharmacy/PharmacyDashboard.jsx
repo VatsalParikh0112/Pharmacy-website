@@ -1,8 +1,8 @@
 import React from "react";
-import CurrentClr from "../assets/Dashboard/CurrentClr.png";
-import NewClr from "../assets/Dashboard/NewClr.png";
-import RejectClr from "../assets/Dashboard/RejectClr.png";
-import RecallClr from "../assets/Dashboard/RecallClr.png";
+import CurrentClr from "../../assets/Dashboard/CurrentClr.png";
+import NewClr from "../../assets/Dashboard/NewClr.png";
+import RejectClr from "../../assets/Dashboard/RejectClr.png";
+import RecallClr from "../../assets/Dashboard/RecallClr.png";
 
 const PharmacyDashboard = () => {
   return (

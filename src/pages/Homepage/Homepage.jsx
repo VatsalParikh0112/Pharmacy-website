@@ -1,19 +1,68 @@
-import React from "react";
-import { useState } from "react";
-import search from "../assets/Homepage/search.png";
-import cl from "../assets/Homepage/cl.png";
-import cr from "../assets/Homepage/cr.png";
-import mdcl from "../assets/Homepage/mdcl.png";
-import mdcr from "../assets/Homepage/mdcr.png";
-import ABC from "../assets/Homepage/ABC.jpg";
-import ABC2 from "../assets/Homepage/ABC2.png";
-import Search from "../assets/Homepage/Carousel/Search.png";
-import Down from "../assets/Homepage/Carousel/Down.png";
+import React, { useState, useEffect, useRef } from "react";
+import { useSwipeable } from "react-swipeable";
+import search from "../../assets/Homepage/search.png";
+import smBG from "../../assets/Homepage/smBG.png";
+import mdBG from "../../assets/Homepage/mdBG.png";
+import lgBG from "../../assets/Homepage/lgBG.png";
+import xlBG from "../../assets/Homepage/xlBG.png";
+import Search from "../../assets/Homepage/Carousel/Search.png";
+import Down from "../../assets/Homepage/Carousel/Down.png";
+import CarouselBG1 from "../../assets/Homepage/Carousel/BG1.jpg";
 
 const Homepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [cl, cr, mdcl, mdcr];
+  const [manualOverride, setManualOverride] = useState(false);
+  const [bgImage, setBgImage] = useState(smBG);
+  const slides = [0, 1, 2, 3];
+  const carouselRef = useRef(null);
 
+  // Responsive background image
+  useEffect(() => {
+    const updateBackground = () => {
+      const width = window.innerWidth;
+      if (width >= 1440) setBgImage(xlBG);
+      else if (width >= 1152) setBgImage(lgBG);
+      else if (width >= 768) setBgImage(mdBG);
+      else setBgImage(smBG);
+    };
+    updateBackground();
+    window.addEventListener("resize", updateBackground);
+    return () => window.removeEventListener("resize", updateBackground);
+  }, []);
+
+  // Auto-slide unless in manual mode
+  useEffect(() => {
+    if (manualOverride) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [manualOverride]);
+
+  // Resume auto-slide on click outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (carouselRef.current && !carouselRef.current.contains(event.target)) {
+        setManualOverride(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedUp: () => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setManualOverride(true);
+    },
+    onSwipedDown: () => {
+      setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+      setManualOverride(true);
+    },
+    trackMouse: true, // allows drag on desktop
+  });
   return (
     <>
       <div className="flex flex-col gap-[8px] ">
@@ -21,10 +70,15 @@ const Homepage = () => {
         <div className=" flex flex-col items-start ">
           {/* Hero section */}
           <div
-            className=" flex justify-start lg:justify-between items-center self-stretch bg-[#F2F4F8] px-[16px] py-[83px] md:py-[138px] md:pl-[32px] md:pr-[219px] lg:py-[80px] lg:px-[80px] xl:py-[100px] xl:px-[80px] "
+            className=" flex justify-start lg:justify-between items-center self-stretch bg-black/30 text-white h-[500px] px-[16px] py-[83px] md:py-[138px] md:pl-[32px] md:pr-[219px] lg:py-[80px] lg:px-[80px] xl:py-[100px] xl:px-[80px] "
             style={{
-              background:
-                "linear-gradient(285deg, rgba(240, 253, 252, 0.80) 7.57%, rgba(207, 242, 230, 0.80) 106.54%)",
+              height: "500px",
+              width: "100%",
+              backgroundImage: `url(${bgImage})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              backgroundBlendMode: "overlay",
             }}
           >
             <div className=" flex flex-col items-start gap-[20px] md:gap-[24px] ">
@@ -80,14 +134,24 @@ const Homepage = () => {
 
             {/* carousel */}
             <div className="flex w-full h-full justify-center rounded-[4px] md:px-[32px]">
-              <div className="relative w-full overflow-hidden h-full bg-[#F2F2F2] rounded-[8px]">
+              <div className="relative w-full overflow-hidden h-full text-white rounded-[8px]">
                 {/* Slide Container */}
                 <div
                   className="flex h-full transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                 >
                   {/* Slide 1 - e.g. Image Left, Text Right */}
-                  <div className="w-full flex-shrink-0 flex flex-col items-center justify-center h-[500px] ">
+                  <div
+                    className="w-full flex-shrink-0 flex flex-col items-center bg-black/30 justify-center h-[500px] "
+                    style={{
+                      width: "100%",
+                      backgroundImage: `url(${CarouselBG1})`,
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                      backgroundBlendMode: "overlay",
+                    }}
+                  >
                     <div className=" font-inter flex flex-col items-start w-full max-w-[656px] gap-[16px] px-[16px] md:px-[24px] ">
                       <div className=" font-bold text-[20px] md:text-[24px] md:leading-[35.2px] lg:text-[32px] ">
                         All Your Pharmacy Needs, Absolutely Free
@@ -100,7 +164,17 @@ const Homepage = () => {
                   </div>
 
                   {/* Slide 2 - e.g. Fullscreen image with overlay */}
-                  <div className="w-full flex-shrink-0 flex flex-col items-center justify-center h-[500px] ">
+                  <div
+                    className="w-full flex-shrink-0 flex flex-col items-center bg-black/30 justify-center h-[500px] "
+                    style={{
+                      width: "100%",
+                      backgroundImage: `url(${CarouselBG1})`,
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                      backgroundBlendMode: "overlay",
+                    }}
+                  >
                     <div className=" flex justify-between items-center px-[16px] md:px-[24px] xl:px-[32px] ">
                       <div className=" font-inter flex flex-col items-start gap-[16px] w-full ">
                         <div className=" font-bold text-[20px] md:text-[24px] md:leading-[35.2px] lg:text-[32px] ">
@@ -111,7 +185,7 @@ const Homepage = () => {
                           more calling around or waiting endlessly.
                         </div>
                       </div>
-                      <div className=" hidden md:flex flex-col w-full font-inter bg-[#E0E0E0] rounded-[8px] py-[32px] px-[28px] gap-[24px]  ">
+                      <div className=" hidden md:flex flex-col w-full font-inter bg-[#E0E0E0] text-black rounded-[8px] py-[32px] px-[28px] gap-[24px]  ">
                         <div className=" font-semibold text-[#29B48B] text-[24px] leading-[28px] ">
                           Search
                         </div>
@@ -140,7 +214,17 @@ const Homepage = () => {
                   </div>
 
                   {/* Slide 3 - e.g. Text Top, Image Bottom */}
-                  <div className="w-full flex-shrink-0 flex flex-col items-center justify-center h-[500px] ">
+                  <div
+                    className="w-full flex-shrink-0 flex flex-col items-center bg-black/30 justify-center h-[500px] "
+                    style={{
+                      width: "100%",
+                      backgroundImage: `url(${CarouselBG1})`,
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                      backgroundBlendMode: "overlay",
+                    }}
+                  >
                     <div className=" font-inter flex flex-col items-start w-full max-w-[656px] gap-[16px] px-[16px] md:px-[24px] ">
                       <div className=" font-bold text-[20px] md:text-[24px] md:leading-[35.2px] lg:text-[32px] ">
                         Built for You, the Patient
@@ -153,7 +237,17 @@ const Homepage = () => {
                   </div>
 
                   {/* Slide 4 - Another custom layout */}
-                  <div className="w-full flex-shrink-0 flex flex-col items-center justify-center h-[500px] ">
+                  <div
+                    className="w-full flex-shrink-0 flex flex-col items-center bg-black/30 justify-center h-[500px] "
+                    style={{
+                      width: "100%",
+                      backgroundImage: `url(${CarouselBG1})`,
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                      backgroundBlendMode: "overlay",
+                    }}
+                  >
                     <div className=" font-inter flex flex-col items-start w-full max-w-[656px] gap-[16px] px-[16px] md:px-[24px] ">
                       <div className=" font-bold text-[20px] md:text-[24px] md:leading-[35.2px] lg:text-[32px] ">
                         Why Choose FindMyPharmacy?
@@ -166,26 +260,6 @@ const Homepage = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Navigation Buttons */}
-                <button
-                  onClick={() =>
-                    setCurrentSlide(
-                      (prev) => (prev - 1 + slides.length) % slides.length
-                    )
-                  }
-                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/40 text-white px-3 py-1 rounded-full z-10"
-                >
-                  ‹
-                </button>
-                <button
-                  onClick={() =>
-                    setCurrentSlide((prev) => (prev + 1) % slides.length)
-                  }
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/40 text-white px-3 py-1 rounded-full z-10"
-                >
-                  ›
-                </button>
               </div>
             </div>
           </div>

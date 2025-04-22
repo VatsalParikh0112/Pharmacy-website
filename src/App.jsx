@@ -5,10 +5,10 @@ import 'typeface-inter';
 import 'typeface-poppins';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Homepage from './pages/Homepage';
-import About from "./pages/About";
-import ContactUs from "./pages/ContactUs";
-import FollowUs from "./pages/FollowUs";
+import Homepage from './pages/Homepage/Homepage';
+import About from "./pages/Homepage/About";
+import ContactUs from "./pages/Homepage/ContactUs";
+import FollowUs from "./pages/Homepage/FollowUs";
 import PharmacyLayout from './components/PharmacyLayout';
 import PatientLayout from './components/PatientLayout';
 

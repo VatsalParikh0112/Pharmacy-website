@@ -1,14 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Homepage from "../pages/Homepage";
 import PharmacyNavbar from "./PharmacyNavbar";
 import PharmacySidebar from "../components/PharmacySidebar";
-import PharmacyDashboard from "../pages/PharmacyDashboard";
-import PharmacyCurrent from "../pages/PharmacyCurrent";
-import PharmacyNew from "../pages/PharmacyNew";
-import PharmacyReject from "../pages/PharmacyReject";
-import PharmacyHistory from "../pages/PharmacyHistory";
-import PharmacyInquiries from "../pages/PharmacyInquiries";
+import Homepage from "../pages/Homepage/Homepage";
+import PharmacyDashboard from "../pages/Pharmacy/PharmacyDashboard";
+import PharmacyCurrent from "../pages/Pharmacy/PharmacyCurrent";
+import PharmacyNew from "../pages/Pharmacy/PharmacyNew";
+import PharmacyReject from "../pages/Pharmacy/PharmacyReject";
+import PharmacyHistory from "../pages/Pharmacy/PharmacyHistory";
+import PharmacyInquiries from "../pages/Pharmacy/PharmacyInquiries";
 
 const PharmacyLayout = () => {
   return (
