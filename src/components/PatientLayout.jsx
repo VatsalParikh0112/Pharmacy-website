@@ -8,6 +8,7 @@ import PatientHomepage from "../pages/Patient/PatientHomepage";
 import PatientInfo from "../pages/Patient/PatientInfo";
 import PatientInsurance from "../pages/Patient/PatientInsurance";
 import PatientHistory from "../pages/Patient/PatientHistory"
+import PatientSearch from "../pages/Patient/PatientSearch"
 
 
 const PatientLayout = () => {
@@ -23,6 +24,7 @@ const PatientLayout = () => {
           <Route path="PatientInfo" element={<PatientInfo />} />
           <Route path="PatientInsurance" element={<PatientInsurance />} />
           <Route path="PatientHistory" element={<PatientHistory />} />
+          <Route path="PatientSearch" element={<PatientSearch />} />
         </Routes>
       </div>
 

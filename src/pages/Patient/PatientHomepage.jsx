@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Main from "../../assets/Patient/Main.png";
 import Main2 from "../../assets/Patient/Main2.png";
 import Location from "../../assets/Patient/Location.png";
 import Search from "../../assets/Patient/Search.png";
-import Filter from "../../assets/Patient/Filter.png";
 import Close from "../../assets/Patient/Close.png";
 import Medication from "../../assets/Patient/Medication.png";
 import Ortho from "../../assets/Patient/Ortho.png";
@@ -16,26 +17,73 @@ import Post from "../../assets/Patient/Post.png";
 import Mobility from "../../assets/Patient/Mobility.png";
 
 const PatientHomepage = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [recentSearches, setRecentSearches] = useState([]);
   const [inputActive, setInputActive] = useState(false);
+  
+  // Location state
+  const [location, setLocation] = useState({
+    name: "",
+    zip: "",
+  });
 
-  // Handle input change with max length of 15 characters
+  // Fetch the location on component mount
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          
+          // Use a geocoding API to get the location info
+          axios
+            .get(`https://api.opencagedata.com/geocode/v1/json`, {
+              params: {
+                q: `${latitude}+${longitude}`,
+                key: 'YOUR_API_KEY',  // Replace with your OpenCage API key
+              },
+            })
+            .then((response) => {
+              const result = response.data.results[0];
+              if (result) {
+                setLocation({
+                  name: result.formatted,
+                  zip: result.components.postcode,
+                });
+              }
+            })
+            .catch((error) => console.error("Error fetching location:", error));
+        },
+        (error) => console.error("Geolocation error:", error)
+      );
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }, []);
+
+  // Handle search
+  const handleSearch = () => {
+    const trimmedSearch = searchTerm.trim();
+    if (trimmedSearch !== "") {
+      if (!recentSearches.includes(trimmedSearch)) {
+        setRecentSearches([trimmedSearch, ...recentSearches].slice(0, 10));
+      }
+
+      navigate("/PatientHomepage/PatientSearch", {
+        state: { searchTerm: trimmedSearch },
+      });
+
+      setSearchTerm("");
+    }
+  };
+
+  // Handle input change
   const handleInputChange = (e) => {
     if (e.target.value.length <= 15) {
       setSearchTerm(e.target.value);
     }
   };
 
-  // Handle search submission
-  const handleSearch = () => {
-    if (searchTerm.trim() !== "" && !recentSearches.includes(searchTerm)) {
-      setRecentSearches([searchTerm, ...recentSearches].slice(0, 10)); // Limit to last 10 searches
-    }
-    setSearchTerm("");
-  };
-
-  // Remove item from recently searched
   const handleRemoveSearch = (item) => {
     setRecentSearches(recentSearches.filter((search) => search !== item));
   };
@@ -83,13 +131,13 @@ const PatientHomepage = () => {
         <div className=" relative z-10 top-[339px] md:top-[395px] flex flex-col bg-white border shadow-lg  py-[24px] px-[16px] gap-[16px] md:px-[20px] md:gap-[18px] md:w-[636px] md:rounded-[12px] lg:px-[24px] lg:w-[846px] xl:w-[880px] ">
           <div className="flex flex-col gap-[24px]">
             {/* Location Display */}
-            <div className="flex items-center justify-between ">
-              <div className="flex gap-[4px] items-center ">
+            <div className="flex items-center justify-between">
+              <div className="flex gap-[4px] items-center">
                 <img src={Location} alt="Location" />
-                <div className="w-[116px] text-[12px] font-poppins md:w-auto ">
+                <div className="w-[116px] text-[12px] font-poppins md:w-auto">
                   <div>
                     <span className="opacity-50">Showing result for :</span>
-                    New York, NY 10001
+                    {location.name || "Loading..."} {location.zip || ""}
                   </div>
                 </div>
               </div>
@@ -105,6 +153,8 @@ const PatientHomepage = () => {
                   }`}
                 >
                   <img src={Search} alt="Search" />
+
+                  {/* THis Input  */}
                   <input
                     className="font-medium font-inter text-[12px] leading-[19.6px] w-full bg-transparent outline-none"
                     type="text"
@@ -123,18 +173,11 @@ const PatientHomepage = () => {
                     </div>
                   )}
                 </div>
-                <div
-                  className={`p-[8px] rounded-sm bg-[rgba(242,248,246,0.5)] shadow-[inset_0_0_4px_0_rgba(0,0,0,0.05)] cursor-pointer md:p-[12px] ${
-                    inputActive || searchTerm ? "opacity-100" : "opacity-50"
-                  }`}
-                >
-                  <img src={Filter} alt="Filter" />
-                </div>
               </div>
 
               <button
                 onClick={handleSearch}
-                className="flex bg-[#29B48B] text-white items-center justify-center p-[12px] rounded-[4px] text-[14px] leading-[19.6px] md:px-[32px] md:py-[12px]  "
+                className="flex bg-[#29B48B] text-white items-center justify-center p-[12px] rounded-[4px] text-[14px] leading-[19.6px] md:px-[32px] md:py-[12px]"
               >
                 Search
               </button>
@@ -275,7 +318,9 @@ const PatientHomepage = () => {
               <div className=" font-bold text-[24px] text-white ">1</div>
             </div>
             <div className=" flex flex-col items-center gap-[12px] md:gap-[30px] ">
-              <div className=" font-bold text-[16px] leading-[20px] md:text-[20px] md:leading-[20px] ">Enter Details</div>
+              <div className=" font-bold text-[16px] leading-[20px] md:text-[20px] md:leading-[20px] ">
+                Enter Details
+              </div>
               <div className=" opacity-50 text-[14px] leading-[20px] text-center md:text-[16px] md:leading-[20px]">
                 Enter medicine details and ZIP code
               </div>
@@ -286,9 +331,11 @@ const PatientHomepage = () => {
               <div className=" font-bold text-[24px] text-white ">2</div>
             </div>
             <div className=" flex flex-col items-center gap-[12px] md:gap-[30px] ">
-              <div className=" font-bold text-[16px] leading-[20px] md:text-[20px] md:leading-[20px] ">Select Preferences</div>
+              <div className=" font-bold text-[16px] leading-[20px] md:text-[20px] md:leading-[20px] ">
+                Select Preferences
+              </div>
               <div className=" opacity-50 text-[14px] leading-[20px] text-center md:text-[16px] md:leading-[20px]">
-              Select preferred dose and pharmacy
+                Select preferred dose and pharmacy
               </div>
             </div>
           </div>
@@ -297,9 +344,11 @@ const PatientHomepage = () => {
               <div className=" font-bold text-[24px] text-white ">3</div>
             </div>
             <div className=" flex flex-col items-center gap-[12px] md:gap-[30px] ">
-              <div className=" font-bold text-[16px] leading-[20px] md:text-[20px] md:leading-[20px] ">Get Medicine</div>
+              <div className=" font-bold text-[16px] leading-[20px] md:text-[20px] md:leading-[20px] ">
+                Get Medicine
+              </div>
               <div className=" opacity-50 text-[14px] leading-[20px] text-center md:text-[16px] md:leading-[20px]">
-              Get your medicine with verified pharmacy details
+                Get your medicine with verified pharmacy details
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { useSwipeable } from "react-swipeable";
 import search from "../../assets/Homepage/search.png";
 import smBG from "../../assets/Homepage/smBG.png";
@@ -104,7 +105,7 @@ const Homepage = () => {
                 </div>
               </div>
 
-              <div>
+              <Link to='/PatientHomepage'>
                 <button
                   type="button"
                   className="flex justify-center items-center font-poppins text-center text-white bg-[#29B48B] text-[12px] leading-[22.4px] gap-[8px] rounded-[4px] w-[160px] h-[40px] md:p-[16px] md:w-[185px] lg:w-[200px] lg:h-[50px] lg:text-[16px] "
@@ -112,7 +113,7 @@ const Homepage = () => {
                   <img src={search} alt="" />
                   Find a Pharmacy
                 </button>
-              </div>
+              </Link>
             </div>
           </div>
 
