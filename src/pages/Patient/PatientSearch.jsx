@@ -3,10 +3,11 @@ import { useLocation } from "react-router-dom";
 import Main from "../../assets/Patient/Main.png";
 import Main2 from "../../assets/Patient/Main2.png";
 import Location from "../../assets/Patient/Location.png";
+import Location2 from "../../assets/Patient/Location2.png";
+import Call from "../../assets/Patient/call.png";
 import Search from "../../assets/Patient/Search.png";
 
 import Close from "../../assets/Patient/Close.png";
-
 
 const PatientSearch = () => {
   const [brandName, setBrandName] = useState("");
@@ -41,7 +42,6 @@ const PatientSearch = () => {
 
   return (
     <div className="flex flex-col gap-[60px] w-full">
-      
       <div className="flex flex-col md:items-center relative min-h-[720px] md:min-h-[550px]">
         <div
           className="absolute z-0 flex items-center w-full h-[400px] md:h-[500px] md:px-[32px] lg:px-[80px]"
@@ -245,16 +245,99 @@ const PatientSearch = () => {
       </div>
 
       {/* Medication Section Placeholder */}
-      <div className="flex flex-col md:flex-row md:justify-between px-[16px] py-[32px] gap-[24px] md:gap-[0px] md:px-[32px] md:py-[48px] lg:px-[80px] lg:py-[48px] items-center">
-
+      <div className="flex flex-col md:justify-between px-[16px] py-[32px] gap-[24px] md:gap-[36px] lg:gap-[56px] md:px-[32px] md:py-[60px] lg:px-[80px] lg:py-[80px] items-center">
         {/* map heading */}
-          <div className=" w-full text-start font-inter font-semibold leading-[35.2px] text-[18px] ">Search Result: "{searchTerm}"</div>
+        <div className=" w-full text-start font-inter font-semibold leading-[35.2px] text-[18px] md:text-[28px] ">
+          Search Result: "{searchTerm}"
+        </div>
 
         {/* google map */}
-          <div>
-            
+        <div className=" w-full h-[500px] bg-slate-500 rounded "></div>
+
+        {/* Nearby List */}
+        <div className=" w-full flex flex-col items-center gap-[16px] md:gap-[32px] lg:gap-[48px] ">
+          <div className=" flex w-full justify-between items-center ">
+            <div className=" text-start md:text-center font-inter font-medium leading-[35.2px] text-[18px] md:text-[28px] ">
+              Nearby Pharmacies:
+            </div>
+            <div className="text-[12px] font-poppins opacity-50 hover:cursor-pointer ">Show More</div>
           </div>
-          <div></div>
+
+          {/* Pharmacy result */}
+          <div className=" w-full flex flex-col lg:flex-row items-center gap-[20px] ">
+
+            <div className=" w-full max-w-[382px] lg:max-w-full flex flex-col p-[16px] gap-[16px] rounded border border-black/50  ">
+              <div className=" font-inter font-medium text-[20px] leading-[26.4px]  ">
+                Healthcare Pharmacy
+              </div>
+              <div className=" flex flex-col font-inter gap-[8px] text-[16px] leading-[22.4px] ">
+                <div className=" opacity-50  ">123 Medical Street, City</div>
+                <div className=" text-[#29B48B] ">2.5 km away</div>
+                <div className=" opacity-50  ">Amoxicillin 500mg</div>
+                <div className=" opacity-50  ">Generic available</div>
+              </div>
+
+              {/* this div */}
+              <div className=" gap-[16px] w-full flex justify-between items-center pr-[16px] ">
+                <div className=" flex items-center justify-center rounded min-w-[160px] w-full px-[16px] py-[10px] bg-[#29B48B] ">
+                  <button className=" w-full font-inter text-[14px] leading-[19.6px] text-white ">
+                    Send Request
+                  </button>
+                </div>
+                <div className=" flex gap-[8px] ">
+                  <img src={Call} className=" h-[36px] w-[36px] "/>
+                  <img src={Location2} className=" h-[36px] w-[36px] "/>
+                </div>
+              </div>
+            </div>
+
+            <div className=" w-full max-w-[382px] lg:max-w-full flex flex-col p-[16px] gap-[16px] rounded border border-black/50  ">
+              <div className=" font-inter font-medium text-[20px] leading-[26.4px]  ">
+                Healthcare Pharmacy
+              </div>
+              <div className=" flex flex-col font-inter gap-[8px] text-[16px] leading-[22.4px] ">
+                <div className=" opacity-50  ">123 Medical Street, City</div>
+                <div className=" text-[#29B48B] ">2.5 km away</div>
+                <div className=" opacity-50  ">Amoxicillin 500mg</div>
+                <div className=" opacity-50  ">Generic available</div>
+              </div>
+              <div className=" gap-[16px] flex justify-between items-center pr-[16px] ">
+                <div className=" flex items-center justify-center rounded w-full px-[16px] py-[10px] bg-[#29B48B] ">
+                  <button className="  font-inter text-[14px] leading-[19.6px] text-white ">
+                    Send Request
+                  </button>
+                </div>
+                <div className=" flex gap-[8px] ">
+                  <img src={Call} className=" h-[36px] w-[36px] "/>
+                  <img src={Location2} className=" h-[36px] w-[36px] "/>
+                </div>
+              </div>
+            </div>
+
+            <div className=" w-full max-w-[382px] lg:max-w-full flex flex-col p-[16px] gap-[16px] rounded border border-black/50  ">
+              <div className=" font-inter font-medium text-[20px] leading-[26.4px]  ">
+                Healthcare Pharmacy
+              </div>
+              <div className=" flex flex-col font-inter gap-[8px] text-[16px] leading-[22.4px] ">
+                <div className=" opacity-50  ">123 Medical Street, City</div>
+                <div className=" text-[#29B48B] ">2.5 km away</div>
+                <div className=" opacity-50  ">Amoxicillin 500mg</div>
+                <div className=" opacity-50  ">Generic available</div>
+              </div>
+              <div className=" gap-[16px] flex justify-between items-center pr-[16px] ">
+                <div className=" flex items-center justify-center rounded w-full px-[16px] py-[10px] bg-[#29B48B] ">
+                  <button className="  font-inter text-[14px] leading-[19.6px] text-white ">
+                    Send Request
+                  </button>
+                </div>
+                <div className=" flex gap-[8px] ">
+                  <img src={Call} className=" h-[36px] w-[36px] "/>
+                  <img src={Location2} className=" h-[36px] w-[36px] "/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
