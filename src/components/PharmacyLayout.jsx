@@ -15,19 +15,23 @@ const PharmacyLayout = () => {
     <>
       <PharmacyNavbar />
 
-      <div className="flex h-full pt-[10px] md:pt-[0px] ">
-        <PharmacySidebar />
+      <div className="flex  h-[calc(100vh-80px)]">
+        <div className=" hidden lg:block w-[240px] fixed top-[80px] left-0 h-[calc(100vh-80px)] bg-white  z-40 ">
+          <PharmacySidebar />
+        </div>
 
-        <Routes>
-          <Route path="Homepage" element={<Homepage />} />
-          <Route index element={<PharmacyDashboard />} /> {/* Default page */}
-          <Route path="PharmacyDashboard" element={<PharmacyDashboard />} />
-          <Route path="PharmacyCurrent" element={<PharmacyCurrent />} />
-          <Route path="PharmacyNew" element={<PharmacyNew />} />
-          <Route path="PharmacyReject" element={<PharmacyReject />} />
-          <Route path="PharmacyHistory" element={<PharmacyHistory />} />
-          <Route path="PharmacyInquiries" element={<PharmacyInquiries />} />
-        </Routes>
+        <div className=" lg:pl-[272px] w-full overflow-y-auto ">
+          <Routes>
+            <Route path="Homepage" element={<Homepage />} />
+            <Route index element={<PharmacyDashboard />} /> {/* Default page */}
+            <Route path="PharmacyDashboard" element={<PharmacyDashboard />} />
+            <Route path="PharmacyCurrent" element={<PharmacyCurrent />} />
+            <Route path="PharmacyNew" element={<PharmacyNew />} />
+            <Route path="PharmacyReject" element={<PharmacyReject />} />
+            <Route path="PharmacyHistory" element={<PharmacyHistory />} />
+            <Route path="PharmacyInquiries" element={<PharmacyInquiries />} />
+          </Routes>
+        </div>
       </div>
     </>
   );
