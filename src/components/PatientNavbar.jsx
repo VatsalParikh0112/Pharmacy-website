@@ -42,12 +42,15 @@ const Navbar = () => {
         transition={{ duration: 0.3 }}
       >
         {/* Logo */}
-        <div className="flex justify-center items-center md:w-[260px] md:h-[43px] md:py-[1px] md:gap-[8px] ">
+        <Link
+          to="/Homepage"
+          className="flex justify-center items-center md:w-[260px] md:h-[43px] md:py-[1px] md:gap-[8px] "
+        >
           <img src={logo} alt="Logo" />
           <div className="hidden md:block font-bold text-[24px] leading-[24px] text-[#29B48B]">
             Find MyPharmacy
           </div>
-        </div>
+        </Link>
 
         {/* Menu */}
         <div className="flex items-center md:gap-[16px] md:h-[48px] xl:gap-[80px] ">
@@ -87,7 +90,7 @@ const Navbar = () => {
                     : "text-black"
                 }`}
               >
-                Current Request
+                New Request
                 {selectedMenu === "Current Request" && (
                   <div className="absolute bottom-[-5px] left-0 right-0 h-[2px] bg-[#29B48B]"></div>
                 )}
@@ -96,7 +99,9 @@ const Navbar = () => {
                 to="/PatientHomepage/PatientInfo"
                 onClick={() => setSelectedMenu("PatientInfo")}
                 className={`font-normal p-[10px] text-[16px] leading-[25.2px] cursor-pointer relative ${
-                  selectedMenu === "PatientInfo" ? "text-[#29B48B]" : "text-black"
+                  selectedMenu === "PatientInfo"
+                    ? "text-[#29B48B]"
+                    : "text-black"
                 }`}
               >
                 PatientInfo
@@ -165,7 +170,7 @@ const Navbar = () => {
                     selectedItem === "Current Request" ? "bg-[#29B48B]" : ""
                   }`} // Change background if selected
                 >
-                  Current Request
+                  New Request
                 </div>
               </li>
             </Link>

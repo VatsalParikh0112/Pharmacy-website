@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import whitelogo from "../assets/Footer/whitelogo.png";
 import whatsapp from "../assets/Footer/whatsapp.png";
 import mail from "../assets/Footer/mail.png";
@@ -33,10 +34,10 @@ const Footer = () => {
           <div className="hidden md:flex flex-col items-start gap-[20px] w-[288px] h-[161px] lg:w-[152px] xl:w-[288px] ">
             <div className=" self-stretch font-bold text-[18px] leading-[18px] h-[21px] ">Quick Links</div>
             <div className="flex flex-col self-stretch items-start gap-[8px] " >
-              <div className=" text-[16px] leading-[16px] h-[20px] " >Home</div>
-              <div className=" text-[16px] leading-[16px] h-[20px] " >About Us</div>
-              <div className=" text-[16px] leading-[16px] h-[20px] " >Contact Us</div>
-              <div className=" text-[16px] leading-[16px] h-[20px] " >Privacy Policy</div>
+              <Link to='/' className=" text-[16px] leading-[16px] h-[20px] " >Home</Link>
+              <Link to='/About' className=" text-[16px] leading-[16px] h-[20px] " >About Us</Link>
+              <Link to='/ContactUs' className=" text-[16px] leading-[16px] h-[20px] " >Contact Us</Link>
+              <Link to='/FollowUs' className=" text-[16px] leading-[16px] h-[20px] " >Follow Us</Link>
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import whitelogo from "../assets/Footer/whitelogo.png";
 import whatsapp from "../assets/Footer/whatsapp.png";
 import mail from "../assets/Footer/mail.png";
@@ -34,16 +35,16 @@ const PatientFooter = () => {
               Quick Links
             </div>
             <div className="flex flex-col self-stretch items-start gap-[8px] ">
-              <div className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">Current Request</div>
-              <div className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">
+              <Link to='/PatientHomepage' className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">New Request</Link>
+              <Link to='/PatientHomepage/PatientInfo' className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">
                 Patient Info
-              </div>
-              <div className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">
+              </Link>
+              <Link to='/PatientHomepage/patientInsurance' className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">
                 Insurance Info
-              </div>
-              <div className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">
+              </Link>
+              <Link to='/PatientHomepage/patientHistory' className=" cursor-pointer text-[16px] leading-[16px] h-[20px] ">
                 History
-              </div>
+              </Link>
             </div>
           </div>
 

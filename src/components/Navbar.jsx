@@ -43,23 +43,27 @@ const Navbar = () => {
         transition={{ duration: 0.3 }}
       >
         {/* Logo */}
-        <div className="flex justify-center items-center md:w-[260px] md:h-[43px] md:py-[1px] md:gap-[8px] ">
+
+        <Link
+          to="/Homepage"
+          className="flex justify-center items-center md:w-[260px] md:h-[43px] md:py-[1px] md:gap-[8px] "
+        >
           <img src={logo} alt="Logo" />
           <div className="hidden md:block font-bold text-[24px] leading-[24px] text-[#29B48B]">
             Find MyPharmacy
           </div>
-        </div>
+        </Link>
 
         {/* Hamburger Menu */}
         <div className="grid grid-flow-col items-center justify-center gap-[12px] w-[70.5px] h-[29.5px] md:gap-[24px] md:h-[48px] md:w-[203px] lg:w-[364px] xl:w-[831px] xl:gap-[80px] ">
           <div className="flex gap-[16px] order-1 xl:order-2 ">
-            <Link to='/PatientHomepage' className="md:hidden">
+            <Link to="/PatientHomepage" className="md:hidden">
               <img src={btn1} alt="Button" />
             </Link>
             <Link to="/PharmacyHomepage" className="hidden lg:block">
               <img src={phbtn2} alt="Button" />
             </Link>
-            <Link to='/PatientHomepage' className="hidden md:block">
+            <Link to="/PatientHomepage" className="hidden md:block">
               <img src={pbtn1} alt="Button" />
             </Link>
           </div>

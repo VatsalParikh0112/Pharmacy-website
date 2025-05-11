@@ -34,19 +34,23 @@ const PharmacyNavbar = () => {
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
-    setIsOpen(false); 
+    setIsOpen(false);
   };
 
   return (
     <>
       <div className=" sticky flex top-0 z-50 bg-white items-center justify-between self-stretch border-b-[1px] border-[rgba(0,0,0,0.10)] h-[80px] p-[18px] md:px-[32px] gap-[64px]">
         {/* Logo */}
-        <div className="flex justify-center items-center md:h-[50px] md:py-[1px] md:gap-[8px] md:w-[240px]">
+
+        <Link
+          to="/Homepage"
+          className="flex justify-center items-center md:h-[50px] md:py-[1px] md:gap-[8px] md:w-[240px]"
+        >
           <img className="w-[24px] h-[24px]" src={logo} alt="Logo" />
           <div className="hidden md:block font-bold text-[18px] leading-[25.8px] text-[#29B48B]">
             Find MyPharmacy
           </div>
-        </div>
+        </Link>
 
         {/* Hamburger Menu */}
         <div className="lg:w-full flex justify-between items-center">
@@ -114,7 +118,7 @@ const PharmacyNavbar = () => {
                     Welcome, Vatsal Parikh
                   </div>
                 </div>
-                <Link to="/PharmacyHomepage/PharmacyDashboard" >
+                <Link to="/PharmacyHomepage/PharmacyDashboard">
                   <div onClick={() => handleItemClick("Dashboard")}>
                     <div
                       className={`flex items-center gap-[10px] p-[10px] ${
@@ -127,7 +131,7 @@ const PharmacyNavbar = () => {
                   </div>
                 </Link>
 
-                <Link to="/PharmacyHomepage/PharmacyCurrent" >
+                <Link to="/PharmacyHomepage/PharmacyCurrent">
                   <div onClick={() => handleItemClick("Current Request")}>
                     <div
                       className={`flex items-center gap-[10px] p-[10px] ${
@@ -140,7 +144,7 @@ const PharmacyNavbar = () => {
                   </div>
                 </Link>
 
-                <Link to="/PharmacyHomepage/PharmacyNew" >
+                <Link to="/PharmacyHomepage/PharmacyNew">
                   <div onClick={() => handleItemClick("New Request")}>
                     <div
                       className={`flex items-center gap-[10px] p-[10px] ${
@@ -153,7 +157,7 @@ const PharmacyNavbar = () => {
                   </div>
                 </Link>
 
-                <Link to="/PharmacyHomepage/PharmacyReject" >
+                <Link to="/PharmacyHomepage/PharmacyReject">
                   <div onClick={() => handleItemClick("Rejected Request")}>
                     <div
                       className={`flex items-center gap-[10px] p-[10px] ${
@@ -168,7 +172,7 @@ const PharmacyNavbar = () => {
                   </div>
                 </Link>
 
-                <Link to="/PharmacyHomepage/PharmacyHistory" >
+                <Link to="/PharmacyHomepage/PharmacyHistory">
                   <div
                     className="block lg:hidden"
                     onClick={() => handleItemClick("History")}
@@ -184,7 +188,7 @@ const PharmacyNavbar = () => {
                   </div>
                 </Link>
 
-                <Link to="/PharmacyHomepage/PharmacyInquiries" >
+                <Link to="/PharmacyHomepage/PharmacyInquiries">
                   <div
                     className="block lg:hidden"
                     onClick={() => handleItemClick("General Inquiries")}
